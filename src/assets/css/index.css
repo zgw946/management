@@ -1,0 +1,8 @@
+/* 设置背景颜色 */
+body{
+    background-color: #CCC;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
