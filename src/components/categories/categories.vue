@@ -96,7 +96,6 @@ export default {
             // 计算开始和结束的数据
             let start = (this.currentpage - 1) * this.pagesize
             let end = this.currentpage * this.pagesize
-            console.log(this.cateList, start, end)
             // 得到数据源
             this.pageList = this.cateList.slice(start, end)
         },

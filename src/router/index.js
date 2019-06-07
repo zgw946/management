@@ -11,10 +11,14 @@ import Roles from "../components/roles/roles.vue"
 import Rights from "../components/rights/rights.vue"
 import { Message } from 'element-ui';
 import Categories from "../components/categories/categories.vue"
+import Goods from "../components/goods/goods.vue"
+import Goodsadd from "../components/goodsadd/goodsadd.vue"
+import Orders from "../components/orders/orders.vue"
+import Reports from "../components/reports/reports.vue"
 
 Vue.use(Router)
 // 暴露出去
-var router= new Router({
+var router = new Router({
   routes: [
     { path: "/", redirect: { name: "home" } },
     { path: "/element", component: Element },  // 使用element-ui 路由
@@ -23,9 +27,14 @@ var router= new Router({
       path: "/home", name: "home", component: Home,
       children: [
         { path: "/users", name: "users", component: Users },
-        {path:"/roles",name:"roles",component:Roles},
-        {path:"/rights",name:"rights",component:Rights},
-        {path:"/categories",name:"categories",component:Categories}
+        { path: "/roles", name: "roles", component: Roles },
+        { path: "/rights", name: "rights", component: Rights },
+        { path: "/categories", name: "categories", component: Categories },
+        { path: "/goods", name: "goods", component: Goods },
+        { path: "/goods/add", name: "goodsadd", component: Goodsadd },
+        {path:"/orders",name:"orders",component:Orders},
+        {path:"/reports",name:"reports",component:Reports}
+
       ]
     }
 
@@ -45,7 +54,7 @@ router.beforeEach((to, from, next) => {
       })
       router.push('/login')
       return
-    } 
+    }
   }
   next()
 })
